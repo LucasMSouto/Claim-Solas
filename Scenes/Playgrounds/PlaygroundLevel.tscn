@@ -1,0 +1,310 @@
+[gd_scene load_steps=34 format=3 uid="uid://cyseqk8pgcw4n"]
+
+[ext_resource type="PackedScene" uid="uid://cj81nkr2blbnf" path="res://Scenes/Player.tscn" id="1_gi8pn"]
+[ext_resource type="PackedScene" uid="uid://bijxsskd18vk4" path="res://UI/HUD/HUD_target.tscn" id="2_y03f0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kfcwk"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_wvy5o"]
+sky_material = SubResource("ProceduralSkyMaterial_kfcwk")
+
+[sub_resource type="Environment" id="Environment_d84xi"]
+background_mode = 2
+sky = SubResource("Sky_wvy5o")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvy5o"]
+albedo_color = Color(0, 0.501961, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kfcwk"]
+material = SubResource("StandardMaterial3D_wvy5o")
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wvy5o"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_d84xi"]
+size = Vector2(5, 5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d84xi"]
+data = PackedVector3Array(2.5, -2.5, 0, -2.5, -2.5, 0, 2.5, 2.5, 0, -2.5, -2.5, 0, -2.5, 2.5, 0, 2.5, 2.5, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wvy5o"]
+size = Vector2(5, 25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ra883"]
+data = PackedVector3Array(2.5, -12.5, 0, -2.5, -12.5, 0, 2.5, 12.5, 0, -2.5, -12.5, 0, -2.5, 12.5, 0, 2.5, 12.5, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gi8pn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gi8pn"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y03f0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r0f2u"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f8f62"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vb0tg"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cinps"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y03f0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o5fnu"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2iqne"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yw7tf"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r0f2u"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xkv33"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3cb3t"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ll7sc"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kdkl8"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f8f62"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oinmy"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vb0tg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_icade"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gi8pn"]
+size = Vector3(1.77063, 1.93103, 0.398865)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d84xi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0206814, 0, -0.0116668)
+mesh = SubResource("PlaneMesh_kfcwk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wvy5o")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_gi8pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44589, 13.1309)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 1.32385, 0, -0.965926, 0.354725, -21.419, 0.645338, -2.41282)
+mesh = SubResource("QuadMesh_d84xi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_d84xi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.573576, 1.12269, 0, -0.819152, 0.786115, 13.4645, 7.15101, 5.66211)
+mesh = SubResource("QuadMesh_wvy5o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ra883")
+
+[node name="HUD" parent="." instance=ExtResource("2_y03f0")]
+
+[node name="Camera Dynamic Triggers" type="Node3D" parent="."]
+
+[node name="TestArea" type="Node3D" parent="Camera Dynamic Triggers"]
+
+[node name="Tight" type="Node3D" parent="Camera Dynamic Triggers/TestArea"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Tight"]
+transform = Transform3D(0.212886, 0, 0, 0, 1.95961, 0, 0, 0, 4.65717, -7.37092, 0.981527, 11.5651)
+mesh = SubResource("BoxMesh_gi8pn")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Tight/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Tight/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gi8pn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Tight"]
+transform = Transform3D(-9.30556e-09, -1.95961, 0, 0.212886, -8.56572e-08, 0, 0, 0, 4.65717, -6.47533, 2.06729, 11.5651)
+mesh = SubResource("BoxMesh_gi8pn")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Tight/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Tight/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y03f0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Tight"]
+transform = Transform3D(0.212886, 0, 0, 0, 1.95961, 0, 0, 0, 4.65717, -5.58435, 0.981527, 11.5651)
+mesh = SubResource("BoxMesh_gi8pn")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Tight/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Tight/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r0f2u")
+
+[node name="Narrow" type="Node3D" parent="Camera Dynamic Triggers/TestArea"]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Narrow"]
+transform = Transform3D(0.212886, 0, 0, 0, 2.40931, 0, 0, 0, 4.65717, -4.57935, 1.20722, 6.88253)
+mesh = SubResource("BoxMesh_gi8pn")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_f8f62")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Narrow"]
+transform = Transform3D(0.212886, 0, 0, 0, 2.40931, 0, 0, 0, 4.65717, -8.37108, 1.20722, 6.88253)
+mesh = SubResource("BoxMesh_gi8pn")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_vb0tg")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Narrow"]
+transform = Transform3D(-9.30556e-09, -4.00233, 0, 0.212886, -1.74947e-07, 0, 0, 0, 4.65717, -6.47543, 2.51721, 6.88253)
+mesh = SubResource("BoxMesh_gi8pn")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cinps")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Narrow"]
+transform = Transform3D(1, 0, 0, 0, 2.70741, 0, 0, 0, 0.147354, -4.97224, 1.27416, 9.28567)
+mesh = SubResource("BoxMesh_y03f0")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_o5fnu")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Narrow"]
+transform = Transform3D(1, 0, 0, 0, 2.70741, 0, 0, 0, 0.147354, -7.98166, 1.27772, 9.29118)
+mesh = SubResource("BoxMesh_y03f0")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2iqne")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Narrow"]
+transform = Transform3D(-4.37114e-08, -2.70741, 0, 1, -1.18345e-07, 0, 0, 0, 0.147354, -6.48967, 2.46734, 9.29118)
+mesh = SubResource("BoxMesh_y03f0")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Narrow/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_yw7tf")
+
+[node name="Spatious" type="Node3D" parent="Camera Dynamic Triggers/TestArea"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Spatious"]
+transform = Transform3D(0.303933, 0, 0, 0, 4.40517, 0, 0, 0, 7.6137, -10.3516, 1.87458, 0.43357)
+mesh = SubResource("BoxMesh_r0f2u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xkv33")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Spatious"]
+transform = Transform3D(-1.32854e-08, 0, 2.2636, 0, 4.08308, 0, -0.303933, 0, -9.89451e-08, -9.38719, 2.03381, 4.39392)
+mesh = SubResource("BoxMesh_r0f2u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3cb3t")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Spatious"]
+transform = Transform3D(0.303933, 0, 0, 0, 4.40517, 0, 0, 0, 7.6137, -2.49954, 1.8746, 0.460282)
+mesh = SubResource("BoxMesh_r0f2u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ll7sc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Spatious"]
+transform = Transform3D(-1.32854e-08, 0, 2.2636, 0, 4.08308, 0, -0.303933, 0, -9.89451e-08, -3.4783, 2.03381, 4.39392)
+mesh = SubResource("BoxMesh_r0f2u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_kdkl8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea/Spatious"]
+transform = Transform3D(3.72619, 0, 0, 0, 1.59056, 0, 0, 0, 0.232876, -6.43268, 3.27092, 4.36113)
+mesh = SubResource("BoxMesh_f8f62")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/Spatious/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_oinmy")
+
+[node name="TheWall" type="MeshInstance3D" parent="Camera Dynamic Triggers/TestArea"]
+transform = Transform3D(7.4048, 0, 0, 0, 4.32559, 0, 0, 0, 0.308835, -6.56923, 2.17504, -5.8335)
+mesh = SubResource("BoxMesh_vb0tg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Camera Dynamic Triggers/TestArea/TheWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/TestArea/TheWall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_icade")
+
+[node name="Focal Lenght Triggers" type="Node3D" parent="Camera Dynamic Triggers"]
+
+[node name="Area3D" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 13.7568)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D"]
+shape = SubResource("BoxShape3D_gi8pn")
+
+[node name="Area3D2" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 9.00241)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2"]
+shape = SubResource("BoxShape3D_gi8pn")
+
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered" binds= [1]]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2" to="CharacterBody3D" method="_on_area_3d_body_entered" binds= [1]]
