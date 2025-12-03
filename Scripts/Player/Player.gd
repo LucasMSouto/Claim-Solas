@@ -180,3 +180,21 @@ func fallDmg():
 func hurt():
 	print_debug("Ouch!!")
 	pass
+
+'''Function that executes when player enters a trigger
+The second argument, the int, provides a way to tell which type of trigger it is so it can execute the intended action accordingly
+
+List of all of the Player's Triggers and their ids
+
+0 - TBA
+1 - Camera Focal Lenght Adjustment
+'''
+func _on_area_3d_body_entered(body: Node3D, extra_arg_0: int) -> void:
+	match extra_arg_0:
+		0:
+			pass
+		1:
+			__camera_adjust_focal_lenght()
+			
+func __camera_adjust_focal_lenght() -> void:
+	pass
