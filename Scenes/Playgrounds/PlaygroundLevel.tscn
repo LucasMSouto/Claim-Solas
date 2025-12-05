@@ -1,7 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://cyseqk8pgcw4n"]
+[gd_scene load_steps=35 format=3 uid="uid://cyseqk8pgcw4n"]
 
 [ext_resource type="PackedScene" uid="uid://cj81nkr2blbnf" path="res://Scenes/Player.tscn" id="1_gi8pn"]
 [ext_resource type="PackedScene" uid="uid://bijxsskd18vk4" path="res://UI/HUD/HUD_target.tscn" id="2_y03f0"]
+[ext_resource type="Script" uid="uid://c4axt87y22yco" path="res://Scripts/CameraWorks/DynamicCameraTrigger.gd" id="3_y03f0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kfcwk"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -115,8 +116,10 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wvy5o")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_gi8pn")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_gi8pn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44589, 13.1309)
+collision_layer = 3
+collision_mask = 3
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 1.32385, 0, -0.965926, 0.354725, -21.419, 0.645338, -2.41282)
@@ -296,15 +299,21 @@ shape = SubResource("ConvexPolygonShape3D_icade")
 
 [node name="Area3D" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 13.7568)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D"]
 shape = SubResource("BoxShape3D_gi8pn")
 
 [node name="Area3D2" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 9.00241)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2"]
 shape = SubResource("BoxShape3D_gi8pn")
 
-[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered" binds= [1]]
-[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2" to="CharacterBody3D" method="_on_area_3d_body_entered" binds= [1]]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D" to="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2" to="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2" method="_on_body_entered"]

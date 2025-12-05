@@ -14,6 +14,12 @@ const VIRTUAL_SENSOR_SIZE_MM = 36.0 #35mm is full frame
 @export_range(1,1000,1, "Focal Lenght of the Camera's Lenses in mm") var cameraFocalLenght: float = 24 #in mm #set as 0 to use FOV instead
 @export_range(1,1000,1, "Focal Lenght of the Camera's Lenses during aim action in mm") var aimFocalLenght: float = 52
 
+#Current camera focal lenght values
+var FocalLenght: float
+
+func _ready() -> void:
+	FocalLenght = cameraFocalLenght
+
 func _process(delta: float) -> void:
 	var cameraAim = __aim(delta)
 	position = lerp(position, spring_arm.position + cameraAim,delta*lerp_power)
@@ -31,7 +37,10 @@ func __aim(delta: float) -> Vector3:
 
 '''Converts from Cinematic Focal Lenght to FOV degrees required by the engine to set the camera zoom'''
 func get_cameraFOV() -> float:
-	return rad_to_deg(2 * atan(VIRTUAL_SENSOR_SIZE_MM/(2*cameraFocalLenght)))
+	return rad_to_deg(2 * atan(VIRTUAL_SENSOR_SIZE_MM/(2*FocalLenght)))
 	
 func get_aimFov() -> float:
 	return rad_to_deg(2* atan(VIRTUAL_SENSOR_SIZE_MM/(2*aimFocalLenght)))
+	
+func set_camera_FocalLenght(new_focal_lenght: float) -> void:
+	FocalLenght = new_focal_lenght

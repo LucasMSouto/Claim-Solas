@@ -78,3 +78,9 @@ interact={
 "deadzone": 0.2,
 "events": []
 }
+
+[layer_names]
+
+3d_physics/layer_1="Main"
+3d_physics/layer_2="Player Area Triggers"
+3d_physics/layer_5="s"

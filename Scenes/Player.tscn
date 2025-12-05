@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://cj81nkr2blbnf"]
 
 [ext_resource type="Script" uid="uid://ccyjl5uq60nih" path="res://Scripts/Player/Player.gd" id="1_kne1u"]
-[ext_resource type="Script" uid="uid://d0bd7u0ig710a" path="res://Scripts/Player/CameraSpringArm.gd" id="2_e80uo"]
-[ext_resource type="Script" uid="uid://chs2jjag1yse8" path="res://Scripts/Player/Camera.gd" id="3_cxr5p"]
+[ext_resource type="Script" uid="uid://d0bd7u0ig710a" path="res://Scripts/CameraWorks/CameraSpringArm.gd" id="2_e80uo"]
+[ext_resource type="Script" uid="uid://chs2jjag1yse8" path="res://Scripts/CameraWorks/Camera.gd" id="3_cxr5p"]
 [ext_resource type="Script" uid="uid://df6xbimmco3ct" path="res://Scripts/Multitool&Items/GraplingHook.gd" id="4_dewec"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tdg3f"]
@@ -163,7 +163,7 @@ spring_length = 6.0
 [node name="SpringPosition" type="Node3D" parent="SprintArmPivot/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="SprintArmPivot" node_paths=PackedStringArray("spring_arm")]
+[node name="Camera3D" type="Camera3D" parent="SprintArmPivot" node_paths=PackedStringArray("spring_arm") groups=["PlayerCamera"]]
 transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0)
 fov = 70.0
 script = ExtResource("3_cxr5p")
