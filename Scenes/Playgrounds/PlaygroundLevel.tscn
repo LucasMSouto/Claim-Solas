@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cyseqk8pgcw4n"]
+[gd_scene load_steps=37 format=3 uid="uid://cyseqk8pgcw4n"]
 
 [ext_resource type="PackedScene" uid="uid://cj81nkr2blbnf" path="res://Scenes/Player.tscn" id="1_gi8pn"]
 [ext_resource type="PackedScene" uid="uid://bijxsskd18vk4" path="res://UI/HUD/HUD_target.tscn" id="2_y03f0"]
@@ -95,7 +95,13 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gi8pn"]
-size = Vector3(1.77063, 1.93103, 0.398865)
+size = Vector3(1.77063, 1.93103, 0.0939638)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y03f0"]
+size = Vector3(3.6145, 2.5351, 0.158325)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0f2u"]
+size = Vector3(0.156425, 2.8446, 2.32434)
 
 [node name="Node3D" type="Node3D"]
 
@@ -297,23 +303,118 @@ shape = SubResource("ConvexPolygonShape3D_icade")
 
 [node name="Focal Lenght Triggers" type="Node3D" parent="Camera Dynamic Triggers"]
 
-[node name="Area3D" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 13.7568)
+[node name="Tight Enter" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 13.5327)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_y03f0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Enter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.152451)
 shape = SubResource("BoxShape3D_gi8pn")
 
-[node name="Area3D2" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 9.00241)
+[node name="Narrow Enter" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 9.13551)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 41.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Narrow Enter"]
+shape = SubResource("BoxShape3D_gi8pn")
+
+[node name="Tight Leave" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 13.7834)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Leave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.152451)
+shape = SubResource("BoxShape3D_gi8pn")
+
+[node name="Narrow Leave" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 9.29476)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_y03f0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Narrow Leave"]
 shape = SubResource("BoxShape3D_gi8pn")
 
-[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D" to="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2" to="Camera Dynamic Triggers/Focal Lenght Triggers/Area3D2" method="_on_body_entered"]
+[node name="Spatious Enter" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 36.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Spatious Enter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39678, 1.27128, 4.24245)
+shape = SubResource("BoxShape3D_y03f0")
+
+[node name="Spatious Leave" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.235865)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 41.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Spatious Leave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39678, 1.27128, 4.24245)
+shape = SubResource("BoxShape3D_y03f0")
+
+[node name="Out" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1504, 0, -2.8806)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Out"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308468, 0.922302, -1.65424)
+shape = SubResource("BoxShape3D_r0f2u")
+
+[node name="Out2" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12892, 0, -2.8806)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Out2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308468, 0.922302, -1.65424)
+shape = SubResource("BoxShape3D_r0f2u")
+
+[node name="In" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.80587, 0, -2.8806)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 41.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/In"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308468, 0.922302, -1.65424)
+shape = SubResource("BoxShape3D_r0f2u")
+
+[node name="In2" type="Area3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers" groups=["Camera Zoom Adjustment Areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54818, 0, -2.8806)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 41.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/In2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308468, 0.922302, -1.65424)
+shape = SubResource("BoxShape3D_r0f2u")
+
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Enter" to="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Enter" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Narrow Enter" to="Camera Dynamic Triggers/Focal Lenght Triggers/Narrow Enter" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Leave" to="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Leave" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Narrow Leave" to="Camera Dynamic Triggers/Focal Lenght Triggers/Narrow Leave" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Spatious Enter" to="Camera Dynamic Triggers/Focal Lenght Triggers/Spatious Enter" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Spatious Leave" to="Camera Dynamic Triggers/Focal Lenght Triggers/Spatious Leave" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Out" to="Camera Dynamic Triggers/Focal Lenght Triggers/Out" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/Out2" to="Camera Dynamic Triggers/Focal Lenght Triggers/Out2" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/In" to="Camera Dynamic Triggers/Focal Lenght Triggers/In" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Dynamic Triggers/Focal Lenght Triggers/In2" to="Camera Dynamic Triggers/Focal Lenght Triggers/In2" method="_on_body_entered"]
