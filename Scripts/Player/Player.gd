@@ -23,7 +23,7 @@ var oldVelocity:float = 0.0
 @export var fallDamageThreshold = 20
 
 @onready var cameraArm := $SprintArmPivot
-@onready var camera := $SprintArmPivot/Camera3D
+@onready var camera := $SprintArmPivot/SpringArm3D/Camera3D
 
 @onready var currentMesh = $MeshStanding
 @onready var currentCollider = $StandingCollisionShape

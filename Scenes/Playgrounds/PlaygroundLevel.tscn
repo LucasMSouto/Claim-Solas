@@ -308,6 +308,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40989, 0.964539, 13.5327)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_y03f0")
+DyanamicCameraFocalLenght = 100.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera Dynamic Triggers/Focal Lenght Triggers/Tight Enter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.152451)
