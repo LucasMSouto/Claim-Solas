@@ -23,6 +23,7 @@ var oldVelocity:float = 0.0
 @export var fallDamageThreshold = 20
 
 @onready var cameraArm := $SprintArmPivot
+@onready var camera := $SprintArmPivot/SpringArm3D/Camera3D
 
 @onready var currentMesh = $MeshStanding
 @onready var currentCollider = $StandingCollisionShape
@@ -180,3 +181,6 @@ func fallDmg():
 func hurt():
 	print_debug("Ouch!!")
 	pass
+	
+func get_player_camera() -> Camera3D:
+	return camera
